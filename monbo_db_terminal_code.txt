@@ -1,0 +1,84 @@
+curl http://localhost:8080/people
+
+
+class Person {
+    private String rollNo;
+    private String name;
+ 
+    public String getRollNo() {
+        return rollNo;
+    }
+ 
+    public void setRollNo(String rollNo) {
+        this.rollNo = rollNo;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+ 
+class PersonView {
+    public void printPersonDetails(String personName, String personRollNo) {
+        System.out.println("Person");
+        System.out.println("Name: " + Name);
+        System.out.println("Roll No: " + RollNo);
+    }
+}
+ 
+class PersonController {
+    private Person model;
+    private PersonView view;
+ 
+    public PersonController(Person model, PersonView view) {
+        this.model = model;
+        this.view = view;
+    }
+ 
+    public void setPersonName(String name) {
+        model.setName(name);
+    }
+ 
+    public String getPersonName() {
+        return model.getName();
+    }
+ 
+    public void setPersonRollNo(String rollNo) {
+        model.setRollNo(rollNo);
+    }
+ 
+    public String getPersonRollNo() {
+        return model.getRollNo();
+    }
+ 
+    public void updateView() {
+        view.printPersonDetails(model.getName(), model.getRollNo());
+    }
+}
+ 
+public class MVCPattern {
+    public static void main(String[] args) {
+        Student model = retrivePersonFromDatabase();
+ 
+        PersonView view = new PersonView();
+ 
+        PersonController controller = new PersonController(model, view);
+ 
+        controller.updateView();
+ 
+        controller.setPersonName("Frodo Baggins");
+ 
+        controller.updateView();
+    }
+ 
+    private static Person retrivePersonFromDatabase() {
+        Person person = new Person();
+        person.setName("Frodo Baggins");
+        person.setRollNo("15UCS157");
+        return person;
+    }
+}
