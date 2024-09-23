@@ -25,8 +25,8 @@ class Person {
 class PersonView {
     public void printPersonDetails(String personName, String personRollNo) {
         System.out.println("Person");
-        System.out.println("Name: " + Name);
-        System.out.println("Roll No: " + RollNo);
+        System.out.println("Name: " + firstName);
+        System.out.println("Roll No: " + rollNo);
     }
 }
  
@@ -62,7 +62,7 @@ class PersonController {
  
 public class MVCPattern {
     public static void main(String[] args) {
-        Student model = retrivePersonFromDatabase();
+        Person model = retrivePersonFromDatabase();
  
         PersonView view = new PersonView();
  
