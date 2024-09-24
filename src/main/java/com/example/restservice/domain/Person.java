@@ -1,4 +1,4 @@
-package com.example.restservice;
+package com.example.restservice.domain;
 
 import org.springframework.data.annotation.Id;
 
