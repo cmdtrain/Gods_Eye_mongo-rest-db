@@ -1,7 +1,10 @@
-package com.example.restservice;
+package com.example.restservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+
+import com.example.restservice.Person;
+import com.example.restservice.repository.PersonRepository;
 
 public class CustomerService {
 
