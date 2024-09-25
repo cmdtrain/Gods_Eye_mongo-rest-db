@@ -17,33 +17,27 @@ public class GreetingController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
-	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		System.out.println("Greeting method");
-		
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
-		
 	
-	}
-	@GetMapping("/hello")
-	public Greeting hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		System.out.println("hello method: " + name);
+		
+	@GetMapping("/smthing smart1")
+	public Greeting get(@RequestParam(value = "name", defaultValue = "World") String name) {
+		System.out.println("get method: " + name);
 		
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));}
 	
-	@PostMapping("/hello")
-	public Greeting post(@RequestParam(value = "name", defaultValue = "World") String name) {
-		System.out.println("post method: " + name);
+	@PostMapping("/smthing smart2")
+	public Greeting create(@RequestParam(value = "name", defaultValue = "World") String name) {
+		System.out.println("create method: " + name);
 		
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));}
 	
-	@PatchMapping("/hello")
-	public Greeting patch(@RequestParam(value = "name", defaultValue = "World") String name) {
-		System.out.println("patch method: " + name);
+	@PatchMapping("/smthing smart3")
+	public Greeting update(@RequestParam(value = "name", defaultValue = "World") String name) {
+		System.out.println("update method: " + name);
 		
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));}
 	
-	@DeleteMapping("/hello")
+	@DeleteMapping("/smthing smart4")
 	public Greeting delete(@RequestParam(value = "name", defaultValue = "World") String name) {
 		System.out.println("delete method: " + name);
 		

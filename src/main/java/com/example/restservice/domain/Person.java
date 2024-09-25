@@ -5,10 +5,41 @@ import org.springframework.data.annotation.Id;
 public class Person {
 
 	  @Id
-	  public String id;
+	  private String id;
+	  
+	  // Method 1 - Getter
+	    public String getId() { return id; }
+	 
+	    // Method 2 - Setter
+	    public void setId(String id)
+	    {
+	 
+	        // This keyword refers to current instance itself
+	        this.id = id;
+	    }
 
-	  public String firstName;
-	  public String lastName;
+	  private String firstName;
+	  // Method 1 - Getter
+	    public String getfirstName() { return firstName; }
+	 
+	    // Method 2 - Setter
+	    public void setfirstName(String firstName)
+	    {
+	 
+	        // This keyword refers to current instance itself
+	        this.firstName = firstName;
+	    }
+	  private String lastName;
+	  // Method 1 - Getter
+	    public String getlastName() { return lastName; }
+	 
+	    // Method 2 - Setter
+	    public void setlastName(String lastName)
+	    {
+	 
+	        // This keyword refers to current instance itself
+	        this.lastName = lastName;
+	    }
 
 	  public Person() {}
 
