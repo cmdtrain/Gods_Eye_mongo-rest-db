@@ -5,53 +5,45 @@ import org.springframework.data.annotation.Id;
 public class Person {
 
 	  @Id
-	  private String id;
-	  
-	  // Method 1 - Getter
-	    public String getId() { return id; }
-	 
-	    // Method 2 - Setter
-	    public void setId(String id)
-	    {
-	 
-	        // This keyword refers to current instance itself
-	        this.id = id;
-	    }
-
+	  private Long id;
 	  private String firstName;
-	  // Method 1 - Getter
-	    public String getfirstName() { return firstName; }
-	 
-	    // Method 2 - Setter
-	    public void setfirstName(String firstName)
-	    {
-	 
-	        // This keyword refers to current instance itself
-	        this.firstName = firstName;
-	    }
 	  private String lastName;
-	  // Method 1 - Getter
-	    public String getlastName() { return lastName; }
-	 
-	    // Method 2 - Setter
-	    public void setlastName(String lastName)
-	    {
-	 
-	        // This keyword refers to current instance itself
-	        this.lastName = lastName;
-	    }
+	  
+	  
+	  
+	  public Person(long l, String string) {}
+	  Person(String firstName, String lastName, Long id) {}
+	  
+	  //Id
+	    public long getId(){ return id; }
+	    public void setId(Long id)
+	    {this.id = id;}
 
-	  public Person() {}
+	    
+	    
+	  // first name
+	    public String getFirstName(){ return firstName; }
+	    public void setFirstName(String firstName)
+	    {this.firstName = firstName;}
+	    
+	    
+	    // last name
+	    public String getLastName(){ return lastName; }
+	    public void setLastName(String lastName)
+	    {this.lastName = lastName;}
+	  
+	 
 
 	  public Person(String firstName, String lastName) {
 	    this.firstName = firstName;
 	    this.lastName = lastName;
+	    this.id = id;
 	  }
 
 	  @Override
 	  public String toString() {
 	    return String.format(
-	        "Customer[id=%s, firstName='%s', lastName='%s']",
+	        "Person [id=%s, firstName='%s', lastName='%s']",
 	        id, firstName, lastName);
 	  }
 
