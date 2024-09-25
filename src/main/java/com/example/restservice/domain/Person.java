@@ -1,7 +1,10 @@
 package com.example.restservice.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Document
 public class Person {
 
 	  @Id
@@ -15,7 +18,7 @@ public class Person {
 	  Person(String firstName, String lastName, Long id) {}
 	  
 	  //Id
-	    public long getId(){ return id; }
+	    public Long getId(){ return id; }
 	    public void setId(Long id)
 	    {this.id = id;}
 
