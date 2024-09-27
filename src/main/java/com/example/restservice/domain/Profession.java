@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
-public class Profession(String idBean, String description, String titleBean, private java.lang.String description;)
+public class Profession(String idBean, String description, String titleBean;)
 {
 	@Bean
 	@Document
