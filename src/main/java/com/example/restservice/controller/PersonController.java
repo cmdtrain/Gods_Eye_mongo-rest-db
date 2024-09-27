@@ -25,21 +25,23 @@ import com.example.restservice.service.counter;
 @RestController
 public class PersonController {
 	
-	private final PersonRepository repository;
 	
-	PersonController(PersonRepository repository) {
-		this.repository = repository;
+	private final PersonService personService;
+	
+	public PersonController (PersonService personService) {}
+	PersonController(PersonService service, PersonService personService) {
+		this.personService = personService;
 	}
 
 	//root
 	@GetMapping("/persons")
 	  List<Person> all() {
-	    return repository.findAll();
+	    return personService.findAll();
 	  }
 	
 	@PostMapping("/persons")
 	  Person newPerson(@RequestBody Person newPerson) {
-	    return repository.save(newPerson);
+	    return personService.save(newPerson);
 	  }
 		
 	
@@ -49,7 +51,8 @@ public class PersonController {
 	@GetMapping("/persons/{id}")
 	  Person one(@PathVariable Long id) {
 	    
-	    return repository.findById(id)
+	    PersonService service;
+		return personService.findById(id)
 	      .orElseThrow(() -> new PersonNotFoundException(id));
 	  }
 	
@@ -57,14 +60,14 @@ public class PersonController {
 	 @PutMapping("/persons/{id}")
 	  Person replacePerson(@RequestBody Person newPerson, @PathVariable Long id) {
 	    
-	    return repository.findById(id)
-	      .map(person -> {
-	        person.setName(newPerson.getName());
-	        person.setRole(newPerson.getRole());
-	        return repository.save(person);
-	      })
+		 return personService.findById(id)
+			      .map(person -> {
+			        person.setName(newPerson.getName());
+			        person.setRole(newPerson.getRole());
+			        return repository.save(person);
+			      })
 	      .orElseGet(() -> {
-	        return repository.save(newPerson);
+	        return personService.save(newPerson);
 	      });
 	  }
 
@@ -72,10 +75,14 @@ public class PersonController {
 	
 	 @DeleteMapping("/persons/{id}")
 	  void deletePerson(@PathVariable String id) {
-	    repository.deleteById(id);
+	    personService.deleteById(id);
 	 }
 
 }
 	
 
 //post, delete, patch
+
+
+
+

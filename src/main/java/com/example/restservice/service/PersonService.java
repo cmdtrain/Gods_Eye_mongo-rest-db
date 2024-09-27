@@ -1,5 +1,9 @@
 package com.example.restservice.service;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,13 +41,35 @@ public class PersonService {
 		return null;
 	}
 
-	private Person[] findAll() {
+	public List<Person> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private void save(Person person) {
+	public Person save(Person person) {
+		return person;
 		// TODO Auto-generated method stub
 		
+	}
+
+
+
+	public Optional<Person> findById(Long id, Collection<Person> persons) {
+        return persons.stream()
+            .filter(person -> person.getId().equals(id)) // Assume Person has getId()
+            .findFirst();
+    }
+
+
+	public void deleteById(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	public Optional<Person> findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

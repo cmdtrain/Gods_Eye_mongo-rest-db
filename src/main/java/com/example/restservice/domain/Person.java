@@ -11,6 +11,7 @@ public class Person {
 	  private Long id;
 	  private String firstName;
 	  private String lastName;
+	private Object profession;
 	  
 	  
 	  
@@ -50,4 +51,9 @@ public class Person {
 	        id, firstName, lastName);
 	  }
 
+	  public Long Profession() { return Profession(); }
+	  public void setProfession(Long Profession)
+	    {this.profession = profession;}
 	}
+
+
