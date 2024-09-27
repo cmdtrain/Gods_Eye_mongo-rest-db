@@ -20,10 +20,7 @@ public class PersonService {
 	  @Autowired
 	  private PersonService PersonRepository;
 
-	  public static void main(String[] args) {
-	    SpringApplication.run(PersonRepository.class, args);
-	  }
-
+	 
 	
 
 	private void deleteAll() {

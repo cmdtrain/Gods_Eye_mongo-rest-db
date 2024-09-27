@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.repository.PersonRepository;
 import com.example.restservice.service.PersonService;
-import com.example.restservice.service.counter;
 
 
 
