@@ -17,15 +17,11 @@ import com.example.restservice.repository.PersonRepository;
 
 public class PersonService {
 
-	  @Autowired
-	  private PersonService PersonRepository;
-
-	 
-	
+	@Autowired
+	private PersonService PersonRepository;
 
 	private void deleteAll() {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	private Person[] findByLastName(String string) {
@@ -34,39 +30,30 @@ public class PersonService {
 	}
 
 	private char[] findByFirstName(String string) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	public List<Person> findAll() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	public Person save(Person person) {
 		return person;
-		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	public Optional<Person> findById(Long id, Collection<Person> persons) {
-        return persons.stream()
-            .filter(person -> person.getId().equals(id)) // Assume Person has getId()
-            .findFirst();
-    }
-
-
-	public void deleteById(String id) {
-		// TODO Auto-generated method stub
-		
+		return persons.stream().filter(person -> person.getId().equals(id)).findFirst();
 	}
 
+	public void deleteById(String id) {
 
+	}
 
 	public Optional<Person> findById(Long id) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 }
