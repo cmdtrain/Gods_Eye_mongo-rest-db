@@ -10,6 +10,7 @@ import com.example.restservice.controller.PersonController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.repository.PersonRepository;
 import com.mongodb.internal.diagnostics.logging.Logger;
+import org.apache.log4j.Logger;
 
 @Service
 public class PersonService {
@@ -17,8 +18,10 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRepository;
 	
-	Logger logger = LogManager.getLogger(PersonService.class);
-	logger.info("person service log message");
+	//log
+	Logger log = Logger.getLogger(PersonService.class); {
+	Logger logger;
+	logger.info("person service log message");}
 
 	public Person getPerson(Long id) {
 		// TODO Auto-generated method stub

@@ -15,14 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.service.PersonService;
 import com.mongodb.internal.diagnostics.logging.Logger;
+import org.apache.log4j.Logger;
 
 @RestController("/persons")
 public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
-	Logger logger = LogManager.getLogger(PersonController.class);
-	logger.info("person controller log message");
+	//log
+	Logger log = Logger.getLogger(PersonController.class); {
+	Logger logger;
+	logger.info("person controller log message");}
 
 	@GetMapping("/all")
 	public List<Person> all() {
