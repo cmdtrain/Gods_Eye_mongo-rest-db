@@ -1,8 +1,8 @@
 package com.example.restservice.service;
 
 import java.util.List;
-import java.util.logging.LogManager;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,6 @@ import com.example.restservice.controller.PersonController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.repository.PersonRepository;
 import com.mongodb.internal.diagnostics.logging.Logger;
-import org.apache.log4j.Logger;
 
 @Service
 public class PersonService {
@@ -19,8 +18,10 @@ public class PersonService {
 	private PersonRepository personRepository;
 	
 	//log
-	Logger log = Logger.getLogger(PersonService.class); {
-	Logger logger;
+	private static Logger log = (com.mongodb.internal.diagnostics.logging.Logger) LoggerFactory.getLogger(PersonService.class);
+	
+	public static void main(String[] args) {
+	com.mongodb.internal.diagnostics.logging.Logger logger = null;
 	logger.info("person service log message");}
 
 	public Person getPerson(Long id) {
