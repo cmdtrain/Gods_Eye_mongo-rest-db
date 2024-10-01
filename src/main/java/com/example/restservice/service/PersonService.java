@@ -18,7 +18,7 @@ public class PersonService {
 	private PersonRepository personRepository;
 
 	// log
-	private static Logger log = LoggerFactory.getLogger(PersonService.class);
+	private Logger log = LoggerFactory.getLogger(PersonService.class);
 
 	public Person getPerson(Long id) {
 		// TODO Auto-generated method stub

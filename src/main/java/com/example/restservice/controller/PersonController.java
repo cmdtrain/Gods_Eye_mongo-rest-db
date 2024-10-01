@@ -11,18 +11,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.domain.Person;
 import com.example.restservice.service.PersonService;
 
-@RestController("/persons")
+@RestController
+@RequestMapping("/persons")
+
 public class PersonController {
 	@Autowired
 	private PersonService personService;
 
 	// log
-	private static Logger log = LoggerFactory.getLogger(PersonController.class);
+	private Logger log = LoggerFactory.getLogger(PersonController.class);
 
 	@GetMapping("/all")
 	public List<Person> all() {
