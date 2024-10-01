@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.service.PersonService;
 
-
 @RestController("/persons")
 public class PersonController {
 	@Autowired
@@ -24,6 +23,7 @@ public class PersonController {
 
 	// log
 	private static Logger log = LoggerFactory.getLogger(PersonController.class);
+	
 
 	@GetMapping("/all")
 	public List<Person> all() {
@@ -33,9 +33,10 @@ public class PersonController {
 
 	@PostMapping("/save")
 	public Person newPerson(@RequestBody Person newPerson) {
+		log.info("log message for person controller: {}", newPerson);
 		return personService.save(newPerson);
 		
-
+		
 	}
 
 	@GetMapping("/{id}")
