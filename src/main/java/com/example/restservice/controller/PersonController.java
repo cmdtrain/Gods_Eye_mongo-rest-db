@@ -23,7 +23,6 @@ public class PersonController {
 
 	// log
 	private static Logger log = LoggerFactory.getLogger(PersonController.class);
-	
 
 	@GetMapping("/all")
 	public List<Person> all() {
@@ -35,8 +34,7 @@ public class PersonController {
 	public Person newPerson(@RequestBody Person newPerson) {
 		log.info("log message for person controller: {}", newPerson);
 		return personService.save(newPerson);
-		
-		
+
 	}
 
 	@GetMapping("/{id}")
