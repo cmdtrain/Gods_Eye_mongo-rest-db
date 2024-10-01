@@ -2,6 +2,7 @@ package com.example.restservice.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,19 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.domain.Person;
 import com.example.restservice.service.PersonService;
-import com.mongodb.internal.diagnostics.logging.Logger;
+
 
 @RestController("/persons")
 public class PersonController {
 	@Autowired
 	private PersonService personService;
 
-	//log
-		private static Logger log = (com.mongodb.internal.diagnostics.logging.Logger) LoggerFactory.getLogger(PersonController.class);
-		
-		public static void main(String[] args) {
-		com.mongodb.internal.diagnostics.logging.Logger logger = null;
-		logger.info("person controller log message");}
+	// log
+	private static Logger log = LoggerFactory.getLogger(PersonController.class);
 
 	@GetMapping("/all")
 	public List<Person> all() {
@@ -37,6 +34,7 @@ public class PersonController {
 	@PostMapping("/save")
 	public Person newPerson(@RequestBody Person newPerson) {
 		return personService.save(newPerson);
+		
 
 	}
 
