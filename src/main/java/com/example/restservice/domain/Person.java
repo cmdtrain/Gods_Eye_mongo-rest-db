@@ -3,10 +3,13 @@ package com.example.restservice.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Document
 public class Person {
 
 	@Id
+	@JsonIgnore
 	private Long id;
 	private String firstName;
 	private String lastName;

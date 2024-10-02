@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.service.PersonService;
 
+import net.minidev.json.annotate.JsonIgnore;
 
 @RestController
 @RequestMapping("/persons")
@@ -43,7 +44,7 @@ public class PersonController {
 
 	
 	@GetMapping("/{id}")
-	public Person getPerson(@JsonIgnore Long id) {
+	public Person getPerson(@PathVariable Long id) {
 		return personService.getPerson(id);
 	}
 
