@@ -16,13 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.domain.Person;
 import com.example.restservice.service.PersonService;
+import com.example.restservice.service.ValidationService;
 
 @RestController
 @RequestMapping("/persons")
 
+	//calling person service
 public class PersonController {
 	@Autowired
 	private PersonService personService;
+
+	// calling validation service
+	@Autowired
+private ValidationService validationService;
+	
 
 	// log
 	private Logger log = LoggerFactory.getLogger(PersonController.class);
@@ -36,6 +43,7 @@ public class PersonController {
 	@PostMapping("/save")
 	public Person newPerson(@RequestBody Person newPerson) {
 		log.info("log message for person controller: {}", newPerson);
+		validationService.validate(newPerson);
 		return personService.save(newPerson);
 
 	}
