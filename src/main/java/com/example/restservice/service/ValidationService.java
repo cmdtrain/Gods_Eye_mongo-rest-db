@@ -1,5 +1,7 @@
 package com.example.restservice.service;
 
+import java.sql.Date;
+
 import org.springframework.stereotype.Service;
 
 import com.example.restservice.domain.Person;
@@ -15,7 +17,7 @@ public class ValidationService {
         String firstName = person.getFirstName();
         String lastName = person.getLastName();
         String profession = person.getProfession();
-        String dateOfBirth = person.getDateofbirth();
+        Date dateOfBirth = person.getDateOfBirth();
 
         if (firstName == null || firstName.isEmpty()) {
             throw new PersonValidationException("First name cannot be empty");
@@ -26,7 +28,7 @@ public class ValidationService {
         if (profession == null || profession.isEmpty()) {
             throw new PersonValidationException("Profession cannot be empty");
         }
-        if (dateOfBirth == null || dateOfBirth.isEmpty()) {
+        if (dateOfBirth == null || ((CharSequence) dateOfBirth).isEmpty()) {
             throw new PersonValidationException("Date of birth cannot be empty");
         }
     }

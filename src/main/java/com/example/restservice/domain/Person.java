@@ -1,5 +1,7 @@
 package com.example.restservice.domain;
 
+import java.sql.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,6 +16,7 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private String profession;
+	private Date dateOfBirth;
 
 	@Override
 	public String toString() {
@@ -53,9 +56,12 @@ public class Person {
 		this.profession = profession;
 	}
 
-	public String getDateofbirth() {
-		// TODO Auto-generated method stub
-		return null;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 }
