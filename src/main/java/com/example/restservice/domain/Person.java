@@ -13,7 +13,7 @@ public class Person {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private Long profession;
+	private String profession;
 
 	@Override
 	public String toString() {
@@ -45,12 +45,17 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public Long getProfession() {
+	public String getProfession() {
 		return profession;
 	}
 
-	public void setProfession(Long profession) {
+	public void setProfession(String profession) {
 		this.profession = profession;
+	}
+
+	public String getDateofbirth() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

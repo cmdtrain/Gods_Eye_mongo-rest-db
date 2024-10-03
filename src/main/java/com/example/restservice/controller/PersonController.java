@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.domain.Person;
+import com.example.restservice.exception.PersonValidationException;
 import com.example.restservice.service.PersonService;
 import com.example.restservice.service.ValidationService;
 
@@ -41,7 +42,7 @@ private ValidationService validationService;
 	}
 
 	@PostMapping("/save")
-	public Person newPerson(@RequestBody Person newPerson) {
+	public Person newPerson(@RequestBody Person newPerson) throws PersonValidationException {
 		log.info("log message for person controller: {}", newPerson);
 		validationService.validate(newPerson);
 		return personService.save(newPerson);
