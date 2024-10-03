@@ -32,7 +32,7 @@ public class PersonService {
 
 	public Person save(Person newPerson) {
 		log.info("log message for person service");
-		Object save = personRepository.save;
+		personRepository.save(newPerson);
 		return newPerson;
 	}
 

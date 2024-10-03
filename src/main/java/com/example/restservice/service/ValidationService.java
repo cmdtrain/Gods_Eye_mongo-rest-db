@@ -28,7 +28,7 @@ public class ValidationService {
         if (profession == null || profession.isEmpty()) {
             throw new PersonValidationException("Profession cannot be empty");
         }
-        if (dateOfBirth == null || ((CharSequence) dateOfBirth).isEmpty()) {
+        if (dateOfBirth == null ) {
             throw new PersonValidationException("Date of birth cannot be empty");
         }
     }
