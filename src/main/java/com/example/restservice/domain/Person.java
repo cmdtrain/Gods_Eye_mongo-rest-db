@@ -12,7 +12,7 @@ public class Person {
 
 	@Id
 	@JsonIgnore
-	private Long id;
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String profession;
@@ -24,11 +24,11 @@ public class Person {
 				+ "]";
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
