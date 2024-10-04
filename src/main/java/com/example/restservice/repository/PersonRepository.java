@@ -21,8 +21,7 @@ public interface PersonRepository extends MongoRepository<Person, String> {
 	Person findByProfession(String profession);
 	
 	@Query(value = "{'active': true}")
-	List<Person> findByActivePersons(boolean b);
+	List<Person> findActivePersons();
 
-	void findAll(boolean b);
 
 }
