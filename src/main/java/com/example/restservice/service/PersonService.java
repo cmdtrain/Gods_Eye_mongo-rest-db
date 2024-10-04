@@ -1,6 +1,7 @@
 package com.example.restservice.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +21,8 @@ public class PersonService {
 	// log
 	private Logger log = LoggerFactory.getLogger(PersonService.class);
 
-	public Person getPerson(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Person> getPerson(String id) {
+		return personRepository.findById(id);
 	}
 
 	public List<Person> findAll() {
@@ -35,8 +35,7 @@ public class PersonService {
 		return newPerson;
 	}
 
-	public Person replacePerson(Person newPerson, Long id) {
-		// TODO Auto-generated method stub
+	public Person replacePerson(Person newPerson, String id) {
 		return null;
 	}
 

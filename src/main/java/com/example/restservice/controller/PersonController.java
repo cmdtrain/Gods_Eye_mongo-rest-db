@@ -1,6 +1,7 @@
 package com.example.restservice.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,12 +50,12 @@ public class PersonController {
 	}
 
 	@GetMapping("/{id}")
-	public Person getPerson(@PathVariable Long id) {
+	public Optional<Person> getPerson(@PathVariable String id) {
 		return personService.getPerson(id);
 	}
 
 	@PutMapping("/replace/{id}")
-	public Person replacePerson(@RequestBody Person newPerson, @PathVariable Long id) {
+	public Person replacePerson(@RequestBody Person newPerson, @PathVariable String id) {
 		return personService.replacePerson(newPerson, id);
 	}
 
