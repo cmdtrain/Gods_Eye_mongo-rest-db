@@ -26,10 +26,7 @@ public class PersonService {
 	}
 
 	public List<Person> findAll() {
-		
-		
-		personRepository.findActivePersons();
-		return null;
+		return personRepository.findActivePersons();
 	}
 
 	public Person save(Person newPerson) {

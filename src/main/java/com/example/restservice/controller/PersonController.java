@@ -22,15 +22,14 @@ import com.example.restservice.service.ValidationService;
 @RestController
 @RequestMapping("/persons")
 
-	//calling person service
+// calling person service
 public class PersonController {
 	@Autowired
 	private PersonService personService;
 
 	// calling validation service
 	@Autowired
-private ValidationService validationService;
-	
+	private ValidationService validationService;
 
 	// log
 	private Logger log = LoggerFactory.getLogger(PersonController.class);
