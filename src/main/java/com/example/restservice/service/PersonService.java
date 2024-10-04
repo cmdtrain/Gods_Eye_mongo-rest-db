@@ -26,7 +26,9 @@ public class PersonService {
 	}
 
 	public List<Person> findAll() {
-		personRepository.findAll();
+		
+		boolean active = false;
+		personRepository.findByActivePersons(active == true);
 		return null;
 	}
 
