@@ -26,7 +26,7 @@ public class PersonService {
 	}
 
 	public List<Person> findAll() {
-		// TODO Auto-generated method stub
+		personRepository.findAll();
 		return null;
 	}
 
