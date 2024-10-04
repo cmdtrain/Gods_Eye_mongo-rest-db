@@ -11,14 +11,6 @@ import com.example.restservice.domain.Person;
 
 @Repository(value = "people")
 public interface PersonRepository extends MongoRepository<Person, String> {
-
-	List<Person> findByLastName(@Param("name") String name);
-
-	Person findByFirstName(String firstName);
-
-	Person findById(Long id);
-	
-	Person findByProfession(String profession);
 	
 	@Query(value = "{'active': true}")
 	List<Person> findActivePersons();
