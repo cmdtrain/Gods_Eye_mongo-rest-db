@@ -39,8 +39,9 @@ public class PersonService {
 		return null;
 	}
 
-	public void delete(String id) {
-		// TODO Auto-generated method stub
+	public Object delete(String id) {
+		log.info("Object deleted from database");
+		return null;
 
 	}
 }
