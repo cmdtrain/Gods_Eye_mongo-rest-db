@@ -73,4 +73,9 @@ public class Person {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public void newId(String newId) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

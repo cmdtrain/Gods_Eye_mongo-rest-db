@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import com.example.restservice.controller.PersonController;
@@ -35,14 +36,20 @@ public class PersonService {
 		return newPerson;
 	}
 
-	public Person replacePerson(Person newPerson, String id) {
-		return null;
+	public Person replacePerson(Person newPerson, String newId) {
+		newPerson.newId(newId);
+		personRepository.save(newPerson);
+		return newPerson;
 	}
 
-	public Object delete(String id) {
+	private void newPerson(String newId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void delete(String id) {
 		log.info("Object deleted from database");
 		personRepository.deleteById(id);
-		return null;
 
 	}
 }

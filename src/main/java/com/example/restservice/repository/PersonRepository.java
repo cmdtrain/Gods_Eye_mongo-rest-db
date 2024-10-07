@@ -11,9 +11,8 @@ import com.example.restservice.domain.Person;
 
 @Repository(value = "people")
 public interface PersonRepository extends MongoRepository<Person, String> {
-	
+
 	@Query(value = "{'active': true}")
 	List<Person> findActivePersons();
-
 
 }
