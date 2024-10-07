@@ -41,6 +41,7 @@ public class PersonService {
 
 	public Object delete(String id) {
 		log.info("Object deleted from database");
+		personRepository.deleteById(id);
 		return null;
 
 	}
