@@ -60,8 +60,8 @@ public class PersonController {
 	}
 
 	@DeleteMapping("/{id}")
-	void deletePerson(@PathVariable String id) {
-		personService.delete(id);
+	public void deletePerson(@PathVariable String id) {
+        personService.delete(id);
 	}
 
 }
