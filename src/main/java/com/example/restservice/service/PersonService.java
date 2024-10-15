@@ -6,10 +6,8 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
-import com.example.restservice.controller.PersonController;
 import com.example.restservice.domain.Person;
 import com.example.restservice.repository.PersonRepository;
 
@@ -42,14 +40,14 @@ public class PersonService {
 		return newPerson;
 	}
 
-	private void newPerson(String newId) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void delete(String id) {
 		log.info("Object deleted from database");
 		personRepository.deleteById(id);
 
 	}
+
+	public List<Person> findOlderPersons(int age) {
+		return personRepository.findByAge(age);
+	}
+
 }

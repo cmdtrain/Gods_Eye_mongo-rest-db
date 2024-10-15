@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.restservice.domain.Person;
@@ -14,5 +13,9 @@ public interface PersonRepository extends MongoRepository<Person, String> {
 
 	@Query(value = "{'active': true}")
 	List<Person> findActivePersons();
+
+	List<Person> findByAge(int age);
+
+	
 
 }
