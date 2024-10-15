@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.domain.Person;
@@ -36,6 +35,8 @@ public class PersonController {
 
 	// log
 	private Logger log = LoggerFactory.getLogger(PersonController.class);
+
+	private int Age;
 
 	@GetMapping("/all")
 	public List<Person> all() {
@@ -63,12 +64,11 @@ public class PersonController {
 
 	@DeleteMapping("/{id}")
 	public void deletePerson(@PathVariable String id) {
-        personService.delete(id);
+		personService.delete(id);
 	}
 
-	 @GetMapping("/{id}")
-	 @ResponseBody
-	    public List<Person> findOlderPersons(@RequestParam int age) {
-	        return personService.findOlderPersons(age);
-	 }
+	@GetMapping("/api/age")
+	public List<Person> getAge(@RequestParam int age) {
+		return personService.findOlderPersons(age);
+	}
 }
