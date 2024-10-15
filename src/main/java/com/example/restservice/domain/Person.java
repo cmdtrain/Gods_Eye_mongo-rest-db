@@ -1,5 +1,7 @@
 package com.example.restservice.domain;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
@@ -78,4 +80,11 @@ public class Person {
 		
 	}
 
+	private int Age(LocalDate dateOfBirth, LocalDate currentDate) {
+		if ((dateOfBirth != null) && (currentDate != null)) {
+		return Period.between(dateOfBirth, currentDate).getYears();
+		} else {
+		return 0;
+		}
+		}
 }
