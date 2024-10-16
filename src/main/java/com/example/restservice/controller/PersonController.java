@@ -67,8 +67,8 @@ public class PersonController {
 		personService.delete(id);
 	}
 
-	@GetMapping("/api/age")
-	public List<Person> getAge(@RequestParam int age) {
+	@GetMapping("/api/age/by_age")
+	public List<Person> filterByAge(@RequestParam int age) {
 		return personService.findOlderPersons(age);
 	}
 }

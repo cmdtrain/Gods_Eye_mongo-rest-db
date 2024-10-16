@@ -14,10 +14,6 @@ public interface PersonRepository extends MongoRepository<Person, String> {
 	@Query(value = "{'active': true}")
 	List<Person> findActivePersons();
 
-	List<Person> findByAge(int age);
-
-	
-
-	
+	List<Person> filterByAge(int age);
 
 }

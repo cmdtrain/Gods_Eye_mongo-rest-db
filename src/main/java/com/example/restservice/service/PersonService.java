@@ -47,7 +47,7 @@ public class PersonService {
 	}
 
 	public List<Person> findOlderPersons(int age) {
-		return personRepository.findByAge(age);
+		return personRepository.filterByAge(age);
 	}
 
 }
