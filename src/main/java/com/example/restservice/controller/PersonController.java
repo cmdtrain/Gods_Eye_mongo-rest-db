@@ -36,7 +36,6 @@ public class PersonController {
 	// log
 	private Logger log = LoggerFactory.getLogger(PersonController.class);
 
-	private int Age;
 
 	@GetMapping("/all")
 	public List<Person> all() {
@@ -67,7 +66,7 @@ public class PersonController {
 		personService.delete(id);
 	}
 
-	@GetMapping("/api/age/by_age")
+	@GetMapping("/by_age")
 	public List<Person> filterByAge(@RequestParam int age) {
 		return personService.findOlderPersons(age);
 	}
