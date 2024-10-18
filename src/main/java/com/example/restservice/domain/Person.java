@@ -8,6 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.time.Period;
+
 
 @Document
 public class Person {
@@ -76,10 +78,7 @@ public class Person {
 
 	}
 
-	
-		
-	}
-
+	@JsonIgnore
 	private int getAge(LocalDate dateOfBirth, LocalDate currentDate) {
 		if ((dateOfBirth != null) && (currentDate != null)) {
 		return Period.between(dateOfBirth, currentDate).getYears();

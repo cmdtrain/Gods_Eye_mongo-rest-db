@@ -35,7 +35,7 @@ public class PersonService {
 	}
 
 	public Person replacePerson(Person newPerson, String newId) {
-		newPerson.newId(newId);
+		newPerson.setId(newId);
 		personRepository.save(newPerson);
 		return newPerson;
 	}
