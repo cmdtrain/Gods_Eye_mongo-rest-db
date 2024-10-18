@@ -79,7 +79,7 @@ public class Person {
 	}
 
 	@JsonIgnore
-	private int getAge(LocalDate dateOfBirth, LocalDate currentDate) {
+	public int getAge(LocalDate dateOfBirth, LocalDate currentDate) {
 		if ((dateOfBirth != null) && (currentDate != null)) {
 			return Period.between(dateOfBirth, currentDate).getYears();
 		} else {
