@@ -10,7 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.Period;
 
-
 @Document
 public class Person {
 
@@ -27,6 +26,7 @@ public class Person {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", profession=" + profession
 				+ "]";
 	}
+
 	boolean active;
 
 	public boolean isActive() {
@@ -81,9 +81,9 @@ public class Person {
 	@JsonIgnore
 	private int getAge(LocalDate dateOfBirth, LocalDate currentDate) {
 		if ((dateOfBirth != null) && (currentDate != null)) {
-		return Period.between(dateOfBirth, currentDate).getYears();
+			return Period.between(dateOfBirth, currentDate).getYears();
 		} else {
-		return 0;
+			return 0;
 		}
-		}
+	}
 }
