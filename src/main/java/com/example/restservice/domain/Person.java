@@ -73,10 +73,10 @@ public class Person {
 
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+
 	}
 
-	public void newId(String newId) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
