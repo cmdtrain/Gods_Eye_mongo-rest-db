@@ -66,8 +66,9 @@ public class PersonController {
 		personService.delete(id);
 	}
 
-	@GetMapping("/by_age")
+	@GetMapping("/by_age") // http://localhost:8080/persons/by_age?age=2   --  use this url
 	public List<Person> filterByAge(@RequestParam int age) {
+		log.info("Filtering persons by age: {}", age); //added log age
 		return personService.findOlderPersons(age);
 	}
 }
