@@ -1,14 +1,12 @@
 package com.example.restservice.domain;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.time.Period;
 
 @Document
 public class Person {
@@ -79,11 +77,13 @@ public class Person {
 	}
 
 	@JsonIgnore
-	public int getAge(LocalDate dateOfBirth, LocalDate currentDate) {
-		if ((dateOfBirth != null) && (currentDate != null)) {
-			return Period.between(dateOfBirth, currentDate).getYears();
-		} else {
+	public int getAge(LocalDate dateOfBirth) {
+		Object currentDate = null;
+		if (dateOfBirth == null || currentDate == null) {
 			return 0;
 		}
+		return getAge(dateOfBirth);
 	}
+
 }
+

@@ -1,7 +1,10 @@
 package com.example.restservice.service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +13,9 @@ import org.springframework.stereotype.Service;
 
 import com.example.restservice.domain.Person;
 import com.example.restservice.repository.PersonRepository;
+import java.util.ArrayList;
+import java.util.List;
+import static java.util.Arrays.stream;
 
 @Service
 public class PersonService {
@@ -47,7 +53,13 @@ public class PersonService {
 	}
 
 	public List<Person> findOlderPersons(int age) {
-		return personRepository.findAll();
+		LocalDate LocalDate = null;
+		return personRepository.findAll()
+				.stream()
+				// filter
+				.filter(person -> person.getAge(LocalDate) > age)
+				.collect(Collectors.toList());
 	}
+
 
 }
